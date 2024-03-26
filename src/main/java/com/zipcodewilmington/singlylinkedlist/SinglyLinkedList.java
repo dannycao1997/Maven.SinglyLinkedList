@@ -5,27 +5,27 @@ import javax.xml.soap.Node;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList {
     private Node head;
     private int size;
 
     private class Node {
-        E data;
+        int data;
         Node next;
 
-        Node(E data) {
+        Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
     public SinglyLinkedList(){
-        this.head = null;
-        this.size = 0;
+        head = null;
+        size = 0;
     }
 
-    public void add(E element){ //add method
-        Node newNode = new Node(element);
+    public void add(int data){ //add method
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
         } else {
@@ -38,7 +38,7 @@ public class SinglyLinkedList<E> {
         size++;
     }
 
-    public boolean remove(int index){ 
+    public boolean remove(int index){
         return false;
     }
 
