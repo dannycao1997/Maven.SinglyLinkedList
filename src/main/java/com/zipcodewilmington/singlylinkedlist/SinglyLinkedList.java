@@ -24,10 +24,21 @@ public class SinglyLinkedList<E> {
         this.size = 0;
     }
 
-    public void add(E element){
+    public void add(E element){ //add method
+        Node newNode = new Node(element);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        size++;
     }
 
-    public boolean remove(int index){
+    public boolean remove(int index){ 
         return false;
     }
 
