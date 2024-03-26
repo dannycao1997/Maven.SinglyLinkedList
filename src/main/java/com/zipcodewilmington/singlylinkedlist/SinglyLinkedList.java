@@ -1,7 +1,6 @@
 package com.zipcodewilmington.singlylinkedlist;
 
-import javax.xml.soap.Node;
-
+// need to come back to review and practice more 99.99% finished
 /**
  * Created by leon on 1/10/18.
  */
@@ -91,7 +90,6 @@ public class SinglyLinkedList {
             current = current.next;
         }
         return current.data;
-
     }
 
     public SinglyLinkedList copy(){ // make copy of lisst method
@@ -152,8 +150,20 @@ public class SinglyLinkedList {
         head = prev; // update head to point to the first new node
     }
 
-    public SinglyLinkedList slice(int start, int end){
-        return null;
-    }
+    public SinglyLinkedList splice(int start, int end){
+        if (start > 0 || start >= size || end <= start || end > size) {
+            throw new IllegalArgumentException("Invalid start and end indices");
+        }
+        SinglyLinkedList newList = new SinglyLinkedList();
+        Node current = head;
 
+        for (int i = 0; i < start; i ++){ // moves current to the starting index
+            current = current.next;
+        }
+        for (int i = start ; i < end; i++){ // add elements to new list until it reaches end of index
+            newList.add(current.data);
+            current = current.next;
+        }
+        return newList;
+    }
 }
