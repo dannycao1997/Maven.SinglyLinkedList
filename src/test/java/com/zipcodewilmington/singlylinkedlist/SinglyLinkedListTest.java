@@ -47,6 +47,4 @@ public class SinglyLinkedListTest {
     public void testSplice(){
 
     }
-
-
 }
